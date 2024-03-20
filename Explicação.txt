@@ -1,0 +1,42 @@
+Aluno: Marcos Gabriel de Sousa Ferreira     TSI-P5
+
+Explicações sobre os Padrões relacionados ao código:
+Princípios SOLID:
+
+1. Princípio da Responsabilidade Única (SRP):
+  - Cada classe deve ter apenas uma razão para mudar.
+  - Exemplo: As classes `FitaImpl`, `AluguelImpl` e `ClienteImpl` têm responsabilidades específicas relacionadas a fitas, aluguéis e clientes.
+
+2. Princípio Aberto/Fechado (OCP):
+  - As interfaces devem estar abertas para extensão, mas fechadas para modificação.
+  - Exemplo: Novas implementações de `Fita`, `Aluguel` ou `Cliente` podem ser adicionadas sem modificar as interfaces existentes.
+
+3. Princípio da Substituição de Liskov (LSP):
+  - As subclasses devem ser substituíveis por sua classe base sem afetar o comportamento esperado.
+  - Exemplo: `FitaImpl` e `AluguelImpl` podem ser substituídas por suas interfaces `Fita` e `Aluguel` em qualquer lugar onde essas interfaces são utilizadas.
+
+4. Princípio da Segregação de Interfaces (ISP):
+  - Muitas interfaces específicas são melhores do que uma interface única.
+  - Exemplo: As interfaces `Fita`, `Aluguel` e `Cliente` possuem apenas os métodos necessários para suas funcionalidades.
+
+5. Princípio da Inversão de Dependência (DIP):
+  - As classes devem depender de abstrações ou seja, interfaces, não de implementações concretas.
+  - Exemplo: `ClienteImpl` depende da interface `Aluguel`, não de uma implementação específica de aluguel.
+
+Padrões GRASP:
+
+1. Creator:
+  - A classe que possui a responsabilidade de criar instâncias de outras classes relacionadas.
+  - Exemplo: `ClienteImpl` cria instâncias de `AluguelImpl`.
+
+2. Alta Coesão:
+  - Cada classe tem uma única responsabilidade bem definida.
+  - Exemplo: As classes `FitaImpl`, `AluguelImpl` e `ClienteImpl` têm alta coesão, cada uma com uma com sua responsabilidade.
+
+3. Baixo Acoplamento:
+  - As classes têm baixo acoplamento, ou seja, dependem umas das outras o mínimo possível.
+  - Exemplo: `ClienteImpl` depende apenas da interface `Aluguel`, não de implementações concretas de aluguel.
+
+4. Especialista:
+  - A responsabilidade deve ser atribuída à classe que possui as informações necessárias para executá-la.
+  - Exemplo: A lógica de cálculo de preço e pontos de alugador frequente está na classe `AluguelImpl`, que possui as informações sobre a fita e os dias alugados.
